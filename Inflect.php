@@ -6,8 +6,8 @@ class Inflect
 {
     const BASE_URL = 'http://export.yandex.ru/inflect.xml';
 
-    protected $word;
-    protected $result;
+    private $word;
+    private $result;
 
     public function __construct($word)
     {
