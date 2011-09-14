@@ -4,7 +4,7 @@ namespace Inflect;
 
 class Inflect
 {
-    const BASE_URL = 'http://export.yandex.ru/inflect.xml?format=json&name=';
+    const BASE_URL = 'http://export.yandex.ru/inflect.xml';
 
     protected $word;
     protected $result;
@@ -17,8 +17,12 @@ class Inflect
     public function inflect()
     {
         if ($this->result === null) {
+            $parameters = http_build_query(array(
+                                               'format' => 'json',
+                                               'name' => $this->word
+                                           ));
             // json_decode returns object
-            $this->result = (array) json_decode(file_get_contents(static::BASE_URL . $this->word));
+            $this->result = (array) json_decode(file_get_contents(static::BASE_URL . '?' . $parameters));
         }
 
         if (count($this->result) <= 2) {
