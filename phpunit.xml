@@ -1,0 +1,7 @@
+<phpunit>
+    <testsuites>
+        <testsuite name="Inflect Test Suite">
+            <file>InflectTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>
