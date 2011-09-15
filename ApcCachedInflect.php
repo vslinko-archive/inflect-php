@@ -7,7 +7,7 @@ class ApcCachedInflect extends Inflect
     private $key;
     private $ttl;
 
-    public function __construct($word, $keyPrefix = 'inflect:', $ttl = 3600)
+    public function __construct($word, $keyPrefix = 'inflect:', $ttl = 0)
     {
         parent::__construct($word);
         $this->key = $keyPrefix . $word;
